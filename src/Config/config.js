@@ -11,7 +11,6 @@ export default {
       gravity: { x: 0, y: 0 },
     },
   },
-  scene: [],
   pixelArt: true,
   roundPixels: true,
 };
