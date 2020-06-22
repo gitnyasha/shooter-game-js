@@ -82,38 +82,38 @@ export default class PreloaderScene extends Phaser.Scene {
 
     this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
 
-    // load assets needed in our game
-    this.load.image("road", "assets/background.jpeg");
-    this.load.image("blueButton1", "assets/ui/blue_button02.png");
-    this.load.image("blueButton2", "assets/ui/blue_button03.png");
-    this.load.image("phaserLogo", "assets/logo.png");
-    this.load.image("box", "assets/ui/grey_box.png");
-    this.load.image("checkedBox", "assets/ui/blue_boxCheckmark.png");
-    this.load.audio("bgMusic", ["assets/TownTheme.mp3"]);
-    this.load.image("sprBg0", "assets/sprBg0.png");
-    this.load.image("sprBg1", "assets/sprBg1.png");
-    this.load.spritesheet("sprExplosion", "assets/sprExplosion.png", {
+    // load build/assets needed in our game
+    this.load.image("road", "build/assets/background.jpeg");
+    this.load.image("blueButton1", "build/assets/ui/blue_button02.png");
+    this.load.image("blueButton2", "build/assets/ui/blue_button03.png");
+    this.load.image("phaserLogo", "build/assets/logo.png");
+    this.load.image("box", "build/assets/ui/grey_box.png");
+    this.load.image("checkedBox", "build/assets/ui/blue_boxCheckmark.png");
+    this.load.audio("bgMusic", ["build/assets/TownTheme.mp3"]);
+    this.load.image("sprBg0", "build/assets/sprBg0.png");
+    this.load.image("sprBg1", "build/assets/sprBg1.png");
+    this.load.spritesheet("sprExplosion", "build/assets/sprExplosion.png", {
       frameWidth: 32,
       frameHeight: 32,
     });
-    this.load.spritesheet("sprEnemy0", "assets/sprEnemy0.png", {
+    this.load.spritesheet("sprEnemy0", "build/assets/sprEnemy0.png", {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.image("sprEnemy1", "assets/sprEnemy1.png");
-    this.load.spritesheet("sprEnemy2", "assets/sprEnemy2.png", {
+    this.load.image("sprEnemy1", "build/assets/sprEnemy1.png");
+    this.load.spritesheet("sprEnemy2", "build/assets/sprEnemy2.png", {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.image("sprLaserEnemy0", "assets/sprLaserEnemy0.png");
-    this.load.image("sprLaserPlayer", "assets/sprLaserPlayer.png");
-    this.load.spritesheet("sprPlayer", "assets/sprPlayer.png", {
+    this.load.image("sprLaserEnemy0", "build/assets/sprLaserEnemy0.png");
+    this.load.image("sprLaserPlayer", "build/assets/sprLaserPlayer.png");
+    this.load.spritesheet("sprPlayer", "build/assets/sprPlayer.png", {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.audio("sndExplode0", "assets/sndExplode0.wav");
-    this.load.audio("sndExplode1", "assets/sndExplode1.wav");
-    this.load.audio("sndLaser", "assets/sndLaser.wav");
+    this.load.audio("sndExplode0", "build/assets/sndExplode0.wav");
+    this.load.audio("sndExplode1", "build/assets/sndExplode1.wav");
+    this.load.audio("sndLaser", "build/assets/sndLaser.wav");
   }
 
   ready() {
