@@ -1,10 +1,10 @@
-import 'regenerator-runtime/runtime';
-import { getBoardHTML } from '../Util/DOM';
+import "regenerator-runtime/runtime";
+import { getBoardHTML } from "../UI/DOM";
 
 export default class PlayerScore {
   constructor(scene) {
     this.scene = scene;
-    this.id = 'eFTPsewuS1FDOkrhwkBr';
+    this.id = "Zl4d7IVkemOTTVg2fUdz";
     this.player_score = 0;
     this.scores = [];
     this.getPlayerScore();
@@ -25,19 +25,22 @@ export default class PlayerScore {
   async submitScore(player) {
     if (this.player_score > 0) {
       const init = {
-        method: 'POST',
+        method: "POST",
         body: JSON.stringify({
           user: `${player}`,
           score: this.player_score,
         }),
         headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
       };
 
       try {
-        await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${this.id}/scores/`, init);
+        await fetch(
+          `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${this.id}/scores/`,
+          init
+        );
         this.player_score = 0;
       } catch (error) {
         this.player_score = 0;
@@ -48,7 +51,9 @@ export default class PlayerScore {
 
   async getScores() {
     try {
-      const res = await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${this.id}/scores/`);
+      const res = await fetch(
+        `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${this.id}/scores/`
+      );
       const data = await res.json();
       this.scores = data.result.sort((a, b) => {
         if (a.score < b.score) {

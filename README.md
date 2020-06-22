@@ -1,173 +1,166 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![LinkedIn][linkedin-shield2]][linkedin-url2]
-[![Hireable][hireable]][hireable-url]
+# Hunting Dragons
 
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <h2 align="center"> Space Shooter Game</h2>
+> Get to kill some dragons.
 
-  <p align="center">
-    In this project I implemented a shooter game with phaser, javascript modules and classes, webpack and jest
-    <br />
-    <a href="https://github.com/YairFernando67/SpaceShooter"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/YairFernando67/SpaceShooter">View Demo</a>
-    ·
-    <a href="https://github.com/YairFernando67/SpaceShooter/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/YairFernando67/SpaceShooter/issues">Request Feature</a>
-    .
-  </p>
-</p>
-<br/>
-<a target="_blank" href="https://spaceshooterwar.herokuapp.com/">Live Version Here</a>
+This project consisted on building a video game using JavaScript and the game Engine [Phaser](https://phaser.io/).
 
+## Content
 
+- [Built with](#built-with)
+- [Live Demo](#live-demo)
+- [GDD](#gdd)
+- [Getting Started](#getting-started)
+- [Authors](#authors)
+- [Contributing](#contributing)
+- [Show your support](#show-your-support)
+- [Acknowledgments](#acknowledgments)
+- [License](#license)
 
-<!-- TABLE OF CONTENTS -->
-## Table of Contents
+## Built With
 
-* [About the Project](#about-the-project)
-  * [Built With](#built-with)
-* [Local installation](#Local-installation)
-* [Contact](#contact)
-* [Contributing](#Contributing)
-* [Show your support](#Show-your-support)
+- JavaScript
+- HTML
+- [Phaser](https://phaser.io/)
+- [webpack](https://webpack.js.org/)
 
+## Live Demo
 
+[]()
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+## GDD
 
-Space shooter game that includes a leaderboard for player's scores and options to enable or disable the audio.
+### Topic
 
-![Screenshot Image](src/assets/intro.gif)
+Dragon fights.
 
-### Built With
-The project was developed using these tools and technologies.
-* [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
-* [HTML5](https://www.w3schools.com/html/)
-* [Webpack](https://webpack.js.org/)
-* [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
-* [Phaser](https://phaser.io/)
+### Objetive of the game
 
+To kill as many dragons as you can to get points
 
-## Local installation
+### Mechanics
 
+1. Mobility: the hunter has the ability to move in any direction with help of keys on the keyboard.
+2. Shoot: the hunter will be shooting arrows from a crossbow.
+3. Scoring System: get 10 points for each dragon they kill.
 
-<p>Follow these steps:</p>
+### Entities
 
-Clone the Repository
+- player: hunter
+- enemies: dragons
+- platform: open road
+- levels: 1
 
-```Shell
-user@pc:~$ git clone https://github.com/YairFernando67/SpaceShooter
-```
+### User interactions
 
-Click on the console and to go to the folder that was created
+Movement keys
 
-```Shell
-user@pc:~$ cd SpaceShooter
-```
+- A left
+- D right
+- W up
+- S down
 
-```
-user@pc:~$ npm install or yarn install
-```
+Shooting arrows key
 
-```
-user@pc:~$ npm run server
-```
+- spacebar
 
-# Spaceships
----
+### Screens
 
-### PLAYER
+1. Boot: shows the name game
+2. Prealoader: loads assets and gets current user score if exist
+3. Authentication: if there is not a user saved on local storage, asks player name
+4. Title: gives options to start, configure, see controls or get leader board game
+5. Options: configures sound
+6. Controls: shows controls
+7. Leader Board: shows leaders scores' game
+8. Game: plays the game
+9. Game Over: shows player's current and maximum scores, asks to go to the menu
 
-![Player Image](src/assets/spaceships/player.png)
+## Getting Started
 
-### ENEMIES
+To get a local copy up and running follow these simple example steps.
 
-![Enemy Image](src/assets/spaceships/enemy1.png)
+### Prerequisites
 
----
-<br/>
+Make sure you have installed [Node JS](https://nodejs.org/en/). If not, follow this [guide](https://www.geeksforgeeks.org/installation-of-node-js-on-linux/) for Linux or this [one](https://treehouse.github.io/installation-guides/mac/node-mac.html) for Mac OS.
 
-![Enemy Image](src/assets/spaceships/enemyl2.png)
+### Setup
 
----
-<br/>
+Download the project
 
-![Enemy Image](src/assets/spaceships/enemyl4.png)
+    $ git clone https://github.com/gitnyasha/shooter-game-js.git
 
+Install the dependencies
 
-Open your browser on [http://localhost:3000](http://localhost:3000)
+    $ npm install
 
-## Commands
+### Install
 
-- Move Left: Left Arrow Key
-- Move Right: Right Arrow Key
-- Move Up: Up Arrow Key
-- Move Down: Down Arrow Key
-- Show: SpaceBar
+If you want to modify the code and see the changes on live go the project's root directory and run webpack-dev-server with the next command:
 
+    $ npm run dev
 
-## Run Tests with Jest
-```Shell
-user@pc:~$ npm run test
-```
+or you can run the http-server for production enviroment:
 
+    $ npx webpack --config webpack.prod.js
 
-<!-- CONTACT -->
-## Contact
+    $ npm run start
 
-👤 **Yair Fernando Facio**
+### Usage
 
-![Screenshot Image](src/assets/logo.jpg)
+Open the next link [http://localhost:8080/](http://localhost:8080/) and enter a player name. Happy playing!!!
 
-- Github: [@YairFernando67](https://github.com/YairFernando67)
-- Twitter: [@YairFernando18](https://twitter.com/YairFernando18)
-- Linkedin: [softwaredeveloperyairfacio](https://www.linkedin.com/in/softwaredeveloperyairfacio/)
-- Email: [yair.facio11@gmail.com](https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=yair.facio11@gmail.com)
-- Portfolio: [softwaredeveloper](https://yairfernando67.github.io/Portfolio/)
+### Run tests
 
-<p align="center">
+Only run the next comman inside the project's root directory:
 
-Project Link: [https://github.com/YairFernando67/SpaceShooter](https://github.com/YairFernando67/SpaceShooter)
+    $ npm run test
 
-</p>
+### Deployment
 
-## 🤝 Contributing
+To deploy this project on heroku run the next commands:
+
+    $ heroku create
+
+if you are on `master` branch:
+
+    $ git push heroku master
+
+or if you are in `another-branch`:
+
+    $ git push heroku another-branch:master
+
+## Authors
+
+👤 **Marshall Chikari**
+
+- Github: [gitnyasha](https://github.com/gitnyasha)
+- Twitter: [@marshallchikari](https://twitter.com/marshallchikari)
+- Linkedin: [marshall chikari](https://www.linkedin.com/in/marshall-chikari)
+
+## Contributing
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/YairFernando67/SpaceShooter/issues).
+Feel free to check the [issues page](https://github.com/gitnyasha/shooter-game-js/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-<!-- MARKDOWN LINKS & IMAGES -->
+## Acknowledgments
 
-[contributors-shield]: https://img.shields.io/github/contributors/YairFernando67/SpaceShooter.svg?style=flat-square
-[contributors-url]: https://github.com/YairFernando67/SpaceShooter/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/YairFernando67/SpaceShooter.svg?style=flat-square
-[forks-url]: https://github.com/YairFernando67/SpaceShooter/network/members
-[stars-shield]: https://img.shields.io/github/stars/YairFernando67/SpaceShooter.svg?style=flat-square
-[stars-url]: https://github.com/YairFernando67/SpaceShooter/stargazers
-[issues-shield]: https://img.shields.io/github/issues/YairFernando67/SpaceShooter.svg?style=flat-square
-[issues-url]: https://github.com/YairFernando67/SpaceShooter/issues
-[license-shield]: https://img.shields.io/github/license/YairFernando67/SpaceShooter.svg?style=flat-square
-[license-url]: https://github.com/YairFernando67/SpaceShooter/blob/master/LICENSE.txt
-[linkedin-shield2]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url2]: https://www.linkedin.com/in/softwaredeveloperyairfacio/
-[hireable]: https://cdn.rawgit.com/hiendv/hireable/master/styles/flat/yes.svg
-[hireable-url]: https://www.linkedin.com/in/softwaredeveloperyairfacio/
+inputText Phaser library
 
+- [rexrainbow](https://rexrainbow.github.io/phaser3-rex-notes/)
 
+Sounds
 
+- [Site](https://opengameart.org/)
 
+Images
 
+- [Site](https://opengameart.org/)
+
+## License
+
+This project is [MIT](LICENSE) licensed.
