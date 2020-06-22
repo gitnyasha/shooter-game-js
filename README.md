@@ -25,7 +25,7 @@ This project consisted on building a video game using JavaScript and the game En
 
 ## Live Demo
 
-[]()
+[DEMO](https://competent-feynman-4d0d07.netlify.app/)
 
 ## GDD
 
