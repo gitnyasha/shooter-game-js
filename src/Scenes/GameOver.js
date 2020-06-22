@@ -10,7 +10,6 @@ export default class SceneGameOver extends Phaser.Scene {
 
   addText() {
     this.title = this.add.text(this.game.config.width * 0.5, 128, "GAME OVER", {
-      fontFamily: "IndieFlower",
       fontSize: 40,
       fontStyle: "bold",
       color: "#ffffff",
@@ -23,7 +22,6 @@ export default class SceneGameOver extends Phaser.Scene {
       90,
       `SCORE: ${this.sys.game.globals.playerScore.getPlayerScore()}`,
       {
-        fontFamily: "IndieFlower",
         fontSize: 30,
         fontStyle: "bold",
         color: "#ffffff",
@@ -38,8 +36,8 @@ export default class SceneGameOver extends Phaser.Scene {
       this,
       config.width / 2,
       config.height / 2 - 100,
-      "button2",
-      "button",
+      "blueButton1",
+      "blueButton2",
       "Menu",
       "Menu"
     );
