@@ -52,18 +52,25 @@ export default class GameScene extends Phaser.Scene {
       this.game.config.height * 0.5,
       "sprPlayer"
     );
+    this.score = 0;
 
-    this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
-    this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
-    this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
-    this.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+    this.keyUp = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
+    this.keyDown = this.input.keyboard.addKey(
+      Phaser.Input.Keyboard.KeyCodes.DOWN
+    );
+    this.keyLeft = this.input.keyboard.addKey(
+      Phaser.Input.Keyboard.KeyCodes.LEFT
+    );
+    this.keyRight = this.input.keyboard.addKey(
+      Phaser.Input.Keyboard.KeyCodes.RIGHT
+    );
     this.keySpace = this.input.keyboard.addKey(
       Phaser.Input.Keyboard.KeyCodes.SPACE
     );
     this.enemies = this.add.group();
     this.enemyLasers = this.add.group();
-
     this.playerLasers = this.add.group();
+    this.scoreText = this.add.text(0, 0, "Score : " + this.score);
     this.time.addEvent({
       delay: 1000,
       callback: function () {
@@ -95,7 +102,6 @@ export default class GameScene extends Phaser.Scene {
         if (enemy.onDestroy !== undefined) {
           enemy.onDestroy();
         }
-
         enemy.explode(true);
         playerLaser.destroy();
       }
@@ -116,14 +122,14 @@ export default class GameScene extends Phaser.Scene {
 
     if (!this.player.getData("isDead")) {
       this.player.update();
-      if (this.keyW.isDown) {
+      if (this.keyUp.isDown) {
         this.player.moveUp();
-      } else if (this.keyS.isDown) {
+      } else if (this.keyDown.isDown) {
         this.player.moveDown();
       }
-      if (this.keyA.isDown) {
+      if (this.keyLeft.isDown) {
         this.player.moveLeft();
-      } else if (this.keyD.isDown) {
+      } else if (this.keyRight.isDown) {
         this.player.moveRight();
       }
 
@@ -151,24 +157,7 @@ export default class GameScene extends Phaser.Scene {
           if (enemy.onDestroy !== undefined) {
             enemy.onDestroy();
           }
-
           enemy.destroy();
-        }
-      }
-    }
-
-    for (var i = 0; i < this.enemyLasers.getChildren().length; i++) {
-      var laser = this.enemyLasers.getChildren()[i];
-      laser.update();
-
-      if (
-        laser.x < -laser.displayWidth ||
-        laser.x > this.game.config.width + laser.displayWidth ||
-        laser.y < -laser.displayHeight * 4 ||
-        laser.y > this.game.config.height + laser.displayHeight
-      ) {
-        if (laser) {
-          laser.destroy();
         }
       }
     }
@@ -185,6 +174,8 @@ export default class GameScene extends Phaser.Scene {
       ) {
         if (laser) {
           laser.destroy();
+          this.score += 1;
+          this.scoreText.setText("Score : " + this.score);
         }
       }
     }

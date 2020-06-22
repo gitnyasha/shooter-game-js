@@ -58,10 +58,12 @@ To kill as many dragons as you can before they destroy the livestock in the vill
 
 Movement keys
 
-- A left
-- D right
-- W up
-- S down
+- Use keyboard arrows
+
+- left
+- right
+- up
+- down
 
 Shooting arrows key
 
