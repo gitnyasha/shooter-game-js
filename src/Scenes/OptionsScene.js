@@ -1,70 +1,60 @@
-import Phaser from 'phaser';
-import Button from '../Objects/Buttons';
-import Background from '../Objects/Background';
+import Phaser from "phaser";
+import Button from "../Objects/Buttons";
 
 export default class OptionsScene extends Phaser.Scene {
   constructor() {
-    super('Options');
-  }
-
-  getBackground() {
-    this.backgrounds = [];
-    for (let i = 0; i < 5; i += 1) {
-      const keys = ['space'];
-      const key = keys[Phaser.Math.Between(0, keys.length - 1)];
-      const bg = new Background(this, key, i * 10);
-      this.backgrounds.push(bg);
-    }
+    super("Options");
   }
 
   create() {
-    this.getBackground();
-
     this.model = this.sys.game.globals.model;
-    const w = this.sys.game.config.width / 2;
-    const h = this.sys.game.config.height / 2;
-    const square = this.add.image(w, h, 'square');
-    this.text = this.add.text(w - 100, h - 180, 'Options', { fontSize: 50, fontFamily: 'IndieFlower' });
-    this.musicButton = this.add.image(w - 100, h - 80, 'check');
-    this.musicText = this.add.text(w, h - 90, 'Music Enabled', { fontSize: 24, fontFamily: 'IndieFlower' });
 
-    this.soundButton = this.add.image(w - 100, h, 'check');
-    this.soundText = this.add.text(w, h - 10, 'Sound Enabled', { fontSize: 24, fontFamily: 'IndieFlower' });
+    this.text = this.add.text(300, 100, "Options", { fontSize: 40 });
+    this.musicButton = this.add.image(200, 200, "checkedBox");
+    this.musicText = this.add.text(250, 190, "Music Enabled", { fontSize: 24 });
+
+    this.soundButton = this.add.image(200, 300, "checkedBox");
+    this.soundText = this.add.text(250, 290, "Sound Enabled", { fontSize: 24 });
 
     this.musicButton.setInteractive();
     this.soundButton.setInteractive();
 
-    this.musicButton.on('pointerdown', () => {
-      this.model.musicOn = !this.model.musicOn;
-      this.updateAudio();
-    });
+    this.musicButton.on(
+      "pointerdown",
+      function () {
+        this.model.musicOn = !this.model.musicOn;
+        this.updateAudio();
+      }.bind(this)
+    );
 
-    this.soundButton.on('pointerdown', () => {
-      this.model.soundOn = !this.model.soundOn;
-      this.updateAudio();
-    });
+    this.soundButton.on(
+      "pointerdown",
+      function () {
+        this.model.soundOn = !this.model.soundOn;
+        this.updateAudio();
+      }.bind(this)
+    );
 
+    this.menuButton = new Button(
+      this,
+      400,
+      500,
+      "blueButton1",
+      "blueButton2",
+      "Menu",
+      "Menu"
+    );
 
-    this.menuButton = new Button(this, 500, 530, 'button2', 'button', 'Menu', 'Menu');
-    const container = this.add.container(0, -20);
-    container.height = 200;
-    container.add([square,
-      this.text,
-      this.musicButton,
-      this.musicText,
-      this.soundButton,
-      this.soundText,
-    ]);
     this.updateAudio();
   }
 
   updateAudio() {
     if (this.model.musicOn === false) {
-      this.musicButton.setTexture('no-check');
+      this.musicButton.setTexture("box");
       this.sys.game.globals.bgMusic.stop();
       this.model.bgMusicPlaying = false;
     } else {
-      this.musicButton.setTexture('check');
+      this.musicButton.setTexture("checkedBox");
       if (this.model.bgMusicPlaying === false) {
         this.sys.game.globals.bgMusic.play();
         this.model.bgMusicPlaying = true;
@@ -72,9 +62,9 @@ export default class OptionsScene extends Phaser.Scene {
     }
 
     if (this.model.soundOn === false) {
-      this.soundButton.setTexture('no-check');
+      this.soundButton.setTexture("box");
     } else {
-      this.soundButton.setTexture('check');
+      this.soundButton.setTexture("checkedBox");
     }
   }
 }

@@ -1,12 +1,12 @@
-import Phaser from 'phaser';
+import Phaser from "phaser";
 
 export default {
   type: Phaser.AUTO,
-  parent: 'container',
-  width: 1000,
+  parent: "container",
+  width: 800,
   height: 600,
   physics: {
-    default: 'arcade',
+    default: "arcade",
     arcade: {
       gravity: {
         x: 0,

@@ -79,23 +79,28 @@ export default class PreloaderScene extends Phaser.Scene {
         this.ready();
       }.bind(this)
     );
-
-    this.load.image("logoP", "assets/doucetech_logo.png");
+    this.load.image("space", "assets/background.jpeg");
+    this.load.image("logo", "assets/doucetech_logo.png");
     this.load.image("button2", "assets/button2.png");
-    this.load.image("square", "assets/square.png");
+    this.load.image("square", "assets/background.jpeg");
     this.load.image("button", "assets/button.png");
     this.load.image("back", "assets/preview2.png");
     this.load.image("check", "assets/check.png");
     this.load.image("no-check", "assets/no-check.png");
     this.load.audio("audio", "assets/theme.mp3");
-    this.load.image("stars", "assets/space.svg");
+    this.load.image("road", "assets/background.jpeg");
+    this.load.image("blueButton1", "assets/ui/blue_button02.png");
+    this.load.image("blueButton2", "assets/ui/blue_button03.png");
+    this.load.image("phaserLogo", "assets/logo.png");
+    this.load.image("box", "assets/ui/grey_box.png");
+    this.load.image("checkedBox", "assets/ui/blue_boxCheckmark.png");
 
-    this.load.spritesheet("enemy2", "assets/enemy2a.png", {
+    this.load.spritesheet("enemy2", "assets/sprEnemy1.png", {
       frameWidth: 57,
       frameHeight: 68,
     });
 
-    this.load.spritesheet("player", "assets/player2.png", {
+    this.load.spritesheet("player", "assets/DragonAttack.png", {
       frameHeight: 25,
       frameWidth: 25,
     });
@@ -103,10 +108,10 @@ export default class PreloaderScene extends Phaser.Scene {
       frameWidth: 50,
       frameHeight: 50,
     });
-    this.load.image("laser-player", "assets/laser-player.png");
+    this.load.image("laser-player", "assets/bullet.png");
     this.load.image("bullet", "assets/bullet.png");
 
-    this.load.audio("laser", "assets/laser.wav");
+    this.load.audio("laser", "assets/flame.ogg");
     this.load.audio("explode", "assets/explode.wav");
     this.load.audio("explode2", "assets/explode2.wav");
   }

@@ -1,7 +1,7 @@
 import Phaser from "phaser";
-import Background from "../Objects/Background";
 import Player from "../Objects/Player";
-import ChaserShip from "../Objects/ChaserShip";
+import Zombie from "../Objects/Zombie";
+import { ScrollingBackground } from "../Objects/Entities";
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
@@ -10,6 +10,7 @@ export default class GameScene extends Phaser.Scene {
 
   preload() {
     this.sys.game.globals.playerScore.resetScore();
+    this.load.image("bgroad", "assets/background.jpeg");
   }
 
   addKeys() {
@@ -22,17 +23,6 @@ export default class GameScene extends Phaser.Scene {
     this.keySpace = this.input.keyboard.addKey(
       Phaser.Input.Keyboard.KeyCodes.SPACE
     );
-  }
-
-  getEnemiesByType(type) {
-    const arr = [];
-    for (let i = 0; i < this.enemies.getChildren().length; i += 1) {
-      const enemy = this.enemies.getChildren()[i];
-      if (enemy.getData("type") === type) {
-        arr.push(enemy);
-      }
-    }
-    return arr;
   }
 
   create() {
@@ -63,9 +53,8 @@ export default class GameScene extends Phaser.Scene {
     };
 
     this.backgrounds = [];
-    for (let i = 0; i < 5; i += 1) {
-      // create five scrolling backgrounds
-      const bg = new Background(this, "space", i * 10);
+    for (var i = 0; i < 5; i++) {
+      var bg = new ScrollingBackground(this, "bgroad", i * 10);
       this.backgrounds.push(bg);
     }
 
@@ -87,8 +76,8 @@ export default class GameScene extends Phaser.Scene {
       callback() {
         let enemy = null;
         if (Phaser.Math.Between(0, 10) >= 2) {
-          if (this.getEnemiesByType("ChaserShip").length < 5) {
-            enemy = new ChaserShip(
+          if (this.getEnemiesByType("Zombie").length < 5) {
+            enemy = new Zombie(
               this,
               Phaser.Math.Between(0, this.game.config.width),
               0
@@ -194,5 +183,18 @@ export default class GameScene extends Phaser.Scene {
         }
       }
     }
+    for (var i = 0; i < this.backgrounds.length; i++) {
+      this.backgrounds[i].update();
+    }
+  }
+  getEnemiesByType(type) {
+    const arr = [];
+    for (let i = 0; i < this.enemies.getChildren().length; i += 1) {
+      const enemy = this.enemies.getChildren()[i];
+      if (enemy.getData("type") === type) {
+        arr.push(enemy);
+      }
+    }
+    return arr;
   }
 }
