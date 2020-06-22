@@ -29,7 +29,7 @@ This project consisted on building a video game using JavaScript and the game En
 
 ## Live Demo
 
-[]()
+[DEMO](https://gitnyasha.github.io/shooter-game-js/)
 
 ## GDD
 
@@ -137,7 +137,7 @@ or if you are in `another-branch`:
 
 ## Authors
 
-👤 **Ivan Ulises Guzman Sanchez**
+👤 **Marshall Chikari**
 
 - Github: [gitnyasha](https://github.com/gitnyasha)
 - Twitter: [@marshallchikari](https://twitter.com/marshallchikari)
@@ -152,25 +152,6 @@ Feel free to check the [issues page](https://github.com/gitnyasha/shooter-game-j
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-inputText Phaser library
-
-- [rexrainbow](https://rexrainbow.github.io/phaser3-rex-notes/)
-
-Sounds
-
-- [PlayOnLoop](https://opengameart.org/users/playonloop)
-- [Deva](https://opengameart.org/users/deva)
-
-Images
-
-- [AntumDeluge](https://opengameart.org/users/antumdeluge)
-- [Eslchr](https://opengameart.org/users/eslchr)
-- [Msavioti](https://opengameart.org/users/msavioti)
-- [Kelvin Shadewing](https://opengameart.org/users/kelvin-shadewing)
-- [ramses2099](https://opengameart.org/users/ramses2099)
 
 ## License
 
