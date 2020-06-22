@@ -86,7 +86,6 @@ export default class GameScene extends Phaser.Scene {
       delay: 500,
       callback() {
         let enemy = null;
-
         if (Phaser.Math.Between(0, 10) >= 2) {
           if (this.getEnemiesByType("ChaserShip").length < 5) {
             enemy = new ChaserShip(

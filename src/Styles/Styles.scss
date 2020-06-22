@@ -12,7 +12,7 @@
   margin: 0 auto;
   display: flex;
   background: transparent;
-  justify-content: center
+  justify-content: center;
 }
 
 #form {
@@ -78,7 +78,6 @@ span#message {
   overflow-y: scroll;
 
   span {
-    font-family: 'IndieFlower';
     font-size: 30px;
     display: flex;
     width: 100%;
@@ -95,24 +94,16 @@ span#message {
   z-index: 1000;
 }
 
-@font-face {
-  font-family: 'IndieFlower';
-  src: url('../assets/fonts/IndieFlower.ttf')
-}
-
 .fuentes {
-  font-family: 'IndieFlower';
   position: absolute;
   top: -3000;
 }
-
 
 @media (max-width: 1000px) {
   canvas {
     width: 700px;
   }
 }
-
 
 @media (max-width: 700px) {
   canvas {
