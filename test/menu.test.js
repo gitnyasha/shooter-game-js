@@ -1,4 +1,3 @@
-import 'jest-canvas-mock';
 import Game from '../src/Scenes/GameInit';
 
 describe('The game should', () => {
