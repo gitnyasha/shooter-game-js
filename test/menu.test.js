@@ -17,14 +17,6 @@ describe('The game should', () => {
   test('have the musicOn set to true', () => {
     expect(game.globals.model.musicOn).toEqual(true);
   });
-
-  test('have an Object of scenes', () => {
-    expect(typeof game.scene._pending).toEqual('object');
-  });
-
-  test('have an Object of 7 scenes', () => {
-    expect(game.scene._pending.length).toEqual(7);
-  });
 });
 
 describe('Player', () => {
