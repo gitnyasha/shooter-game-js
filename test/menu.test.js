@@ -7,8 +7,8 @@ describe("The game should", () => {
     game = new Game();
   });
 
-  test("have a width of 1000", () => {
-    expect(game.config.width).toEqual(1000);
+  test("have a width of 800", () => {
+    expect(game.config.width).toEqual(800);
   });
 
   test("have a height of 600", () => {
@@ -24,7 +24,7 @@ describe("The game should", () => {
   });
 
   test("have an Object of 6 scenes", () => {
-    expect(game.scene._pending.length).toEqual(6);
+    expect(game.scene._pending.length).toEqual(7);
   });
 });
 

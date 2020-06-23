@@ -16,6 +16,8 @@ This project consisted on building a video game using JavaScript and the game En
 - [Acknowledgments](#acknowledgments)
 - [License](#license)
 
+![Uploading Screenshot 2020-06-23 at 18.04.54.png…]()
+
 ## Built With
 
 - JavaScript
