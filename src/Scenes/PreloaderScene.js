@@ -11,7 +11,7 @@ export default class PreloaderScene extends Phaser.Scene {
 
   preload() {
     // add logo image
-    this.add.image(400, 200, "assets/logo.png");
+    this.add.image(400, 200, "logo");
 
     // display progress bar
     var progressBar = this.add.graphics();
