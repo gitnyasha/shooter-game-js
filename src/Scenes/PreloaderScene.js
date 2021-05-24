@@ -11,7 +11,7 @@ export default class PreloaderScene extends Phaser.Scene {
 
   preload() {
     // add logo image
-    this.add.image(400, 200, "logo");
+    this.add.image(400, 200, "assets/logo.png");
 
     // display progress bar
     var progressBar = this.add.graphics();
@@ -80,7 +80,7 @@ export default class PreloaderScene extends Phaser.Scene {
       }.bind(this)
     );
     this.load.image("space", "assets/background.jpeg");
-    this.load.image("logo", "assets/doucetech_logo.png");
+    this.load.image("logo", "assets/logo.png");
     this.load.image("button2", "assets/button2.png");
     this.load.image("square", "assets/background.jpeg");
     this.load.image("button", "assets/button.png");
